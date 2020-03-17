@@ -5,9 +5,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
         <link rel="stylesheet" href="assets/css/main.css" />
-        <link rel="shortcut icon" type="image/ico" href="images/favicon.ico"/>
+        <link rel="shortcut icon" type="image/png" href="images/new_logo.png"/>
+        
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-        <title>Law Crypt</title>
+        <title>Joseph Zhang</title>
     </head>
     
     <body class = "is-preload">
@@ -15,17 +16,17 @@
 
             <!-- Header -->
                 <header id="header" class="alt">
-                    <span class="logo"><img src="images/logo1.png" alt="" /></span>
-                    <h1>Law Crypt</h1>
-                    <p>Secure Lawyer Documents in the Cloud</p>
+                    <span class="logo"><img src="images/new_logo.png" alt="" /></span>
+                    <h1>Joseph Zhang</h1>
+                    <p>Backpacking is cool.</p>
                 </header>
 
             <!-- Nav -->
                 <nav id="nav">
                     <ul>
-                        <li><a href="#intro" class="active">Split</a></li>
-                        <li><a href="#first">Combine</a></li>
-                        <li><a href="#second">About</a></li>
+                        <li><a href="#intro" class="active">Backpacking</a></li>
+                        <li><a href="#first">Cryptography</a></li>
+                        <li><a href="#second">About Me</a></li>
                     </ul>
                 </nav>
 
@@ -36,40 +37,44 @@
                             <div class="spotlight">
                                 <div class="content">
                                     <header class="major">
-                                        <h2>Split</h2>
+                                        <h2>Backpacking</h2>
                                     </header>
-                                    <p>Split and upload your documents to multiple cloud providers for maximum security.</p>
-                                    <form action = "handle.php" method = "POST" enctype="multipart/form-data">
-                                        <input type="file" id="real-file" class = "inputfile" name = "fileToUpload" />
-                                        <label for = "file" class = "button" id = "custom-button">Upload Document</label>
-                                        <span id = "custom-text">No Document Chosen</span>
-                                        <script>
-                                            const realFileBtn = document.getElementById("real-file");
-                                            const customBtn = document.getElementById("custom-button");
-                                            const customTxt = document.getElementById("custom-text");
-
-                                            customBtn.addEventListener("click", function() {
-                                            realFileBtn.click();
-                                            });
-
-                                            realFileBtn.addEventListener("change", function() {
-                                            if (realFileBtn.value) {
-                                                customTxt.innerHTML = realFileBtn.value.match(
-                                                /[\/\\]([\w\d\s\.\-\(\)]+)$/
-                                                )[1];
-                                            } else {
-                                                customTxt.innerHTML = "No Document Chosen";
-                                            }
-                                            });
-                                        </script>
-                                        <ul class="actions">
-                                            <li>
-                                                <input type = "submit" value = "Split" class = "button primary" />
-                                            </li>
-                                        </ul>
+                                    <p>Take a look at my pictures and gear list!</p>
+                                    
+                                    <img src="images/img0.jpg" width="1000">
+                                    <img src="images/img1.jpg" width="1000">
+                                    <img src="images/img16.jpg" width="500">
+                                    <img src="images/img15.jpg" width="500">
+                                    <img src="images/img4.jpg" width="1000">
+                                    <img src="images/img3.jpg" width="500">
+                                    <img src="images/img6.jpg" width="500">
+                                    <img src="images/img8.jpg" width="500">
+                                    <img src="images/img10.jpg" width="500">
+                                    <img src="images/img7.jpg" width="1000">
+                                    <img src="images/img9.jpg" width="1000">
+                                    <img src="images/img11.jpg" width="500">
+                                    <img src="images/img12.jpg" width="500">
+                                    <img src="images/img13.jpg" width="1000">
+                                    <img src="images/img2.jpg" width="500">
+                                    <img src="images/img14.jpg" width="500">
+                                    <img src="images/img17.jpg" width="1000">
+                                    <img src="images/img18.jpg" width="1000">
+                                    <img src="images/img19.jpg" width="500">
+                                    <img src="images/img20.jpg" width="500">
+                                    <img src="images/img21.jpg" width="1000">
+                                    <img src="images/img22.jpg" width="500">
+                                    <img src="images/img23.jpg" width="500">
+                                    <img src="images/img24.jpg" width="500">
+                                    <img src="images/img25.jpg" width="500">
+                                    <img src="images/img27.jpg" width="1000">
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <form action="https://lighterpack.com/r/4l3jaw" target="_blank">
+                                        <input type="submit" class = "button primary" value="Gear List" />
                                     </form>
+                                    
                                 </div>
-                                <span class="icon major style3 fa-copy"></span>
                             </div>
                         </section>
 
@@ -77,60 +82,51 @@
                     
                         <section id="first" class="main special">
                             <header class="major">
-                                <h2>Combine</h2>
-                                <p>Choose a document to retrieve from your cloud providers.</p>
+                                <h2>Crytography</h2>
+                                <p>From Secret Sharing to Forensics</p>
                             </header>
-                            <div style="overflow:auto;" class = "box">
-                                <table> 
-                                    <tr> 
-                                        <th>File name</th> 
-                                        <th>Combine</th> 
-                                    </tr>
-                                    <?php
-                                        $dir = "uploads/";
-        
-                                        $hideName = array('.','..','.DS_Store');    
-        
-                                        $files = scandir($dir, SCANDIR_SORT_DESCENDING);
-        
-                                        foreach($files as $filename) {
-                                            if(!in_array($filename, $hideName)){
-                                                echo "<form action = 'comb.php' method = 'POST'>";
-                                                echo "<tr><td>$filename</td> <td> <input type='hidden' name='filename' value='$filename' /> <input type = 'submit' value = 'Combine' class = 'button primary' /></td></tr>";
-                                                echo "</form>";
-                                            }
-                                        }
-                                    ?>
-                                </table>                     
-                            </div>
+                            <br>
+                            <h2 align = "left">Secret Sharing for Attorney-Client Data in a Multi-Provider Cloud Architecture</h2>
+                            <p align = "left">
+                                In this project, I designed my multi-provider cloud architecture based on the criteria of ensuring confidentiality, availability, and integrity of attorney documents. I further emphasized providing efficiency and usability to encourage future testing of my architecture in law firms. 
+                                My experimental results indicate the low computational overhead of adding the secret-sharing approach to a multi-cloud environment, even on consumer grade hardware. This will be essential for integrating law firms as active participants into our architecture. The only possible way of compromising this system is if multiple cloud providers collude, which is still unlikely given that the shares are additionally encrypted.
+                            </p>
+                            <embed src="ssss_paper.pdf" width="600px" height="600px" />
+                            <br><br>
+                            <form action="https://github.com/joezbub/Shamir-for-Cloud-Environments" target="_blank">
+                                <input type="submit" class = "button primary" value="Github Link" />
+                            </form>
+                            <br><br><br><br>
+                            <h2 align = "left">TARDIS</h2>
+                            <p align = "left">
+                                The sheer implications of this security system discorvered by this research from the Univesity of Virginia
+                                 and the Georgia Institute of Technology is very appealing.
+                                It is scary that a majority of websites are hosted on Content Management Systems (CMS), which 
+                                are prone to gradual attacks. I never would have thought that hackers have evolved to stage attacks over a period of weeks. I commend the authors for investigating and implementing an exhaustive number 
+                                of algorithms to detect suspicious behavior i.e. (filename entropy, code generation, and extension mismatch). 
+                            </p>
+
+                            <embed src="TARDIS.pdf" width="600px" height="600px" />
+
                         </section>
 
                     <!-- Second Section -->
                         <section id="second" class="main special">
                             <header class="major">
-                                <h2>About</h2>
-                                <p id = "about-header">Using secure cryptographic algorithms to uphold the attorney-client privilege while retaining the convenience of cloud computing.</p>
+                                <h2>About Me</h2>
+                                <img src = "images/pct.jpg">
+
+                                <p id = "about-header">Never. Stop. Exploring.</p>
                             </header>
-                            <ul class="statistics">
-                                <li class="style3">
-                                    <span class="icon solid fa-laptop"> </span>
-                                    <strong>Access Anywhere</strong> AWS, Azure, Google, and Dropbox.
-                                </li>
-                                <li class="style1">
-                                    <span class="icon solid fa-code-branch"></span>
-                                    <strong>Split Confidently</strong> (2, 3) Threshold
-                                </li>
-                                <li class="style4">
-                                    <span class="icon solid fa-signal" ></span>
-                                    <strong>Perform Quickly</strong> 1.5 secs for 1 MB Document
-                                </li>
-                            </ul>
-                            <p class="content">A rapidly increasing amount of law firms are adopting cloud computing for its ease of sharing data and accessibility. This level of convenience enables any lawyer to obtain access to client information from anywhere. 
-                                However, with these advancements, information security threats have increased, and storing sensitive legal documents in the cloud implies severe security and privacy risks. Many law firms are being targeted by hackers for their subpar security measures and the sensitive 
-                                information of their clients, who are often large corporations. Law Crypt features a (2, 3) secret sharing scheme as an important measure to distribute lawyer data as fragments to different cloud services, which can provide higher redundancy and additional security and privacy 
-                                protection in the case of key compromise, broken encryption algorithms, or their insecure implementation. Each document is split into 3 unlinkable fragments, but only 2 are needed to recover the original. Law Crypt also uses a secret key encryption algorithm, ChaCha20-Poly1305, 
-                                to provide an additional level of security.
+                                
+                            <p class="content">
+                                I created my website mainly to document my backpacking trips. As an ultralight backpacker, I spend countless hours scouring through the subreddit and Backpacking Light, researching gear options and cool trails around me. If you take a look at my gear (linked above), it is clear that I take many sacrifices in comfort to streamline my pack weight. For instance, 
+                                I do not bring a stove, but rather, I cold soak, allowing cold water to rehydrate my oats, couscous, and other calorie dense foods. Also, I ditched my tent for a flat tarp, so I can utilize my trekking poles and lose a pound. So far, I have section hiked part of the JMT (with my boi Alden and Jeremy) and most of the more minor backpacking trails around me.  
+                                As a Boy Scout, I take full advantage of our many outings to test out new gear, like my new tarp! My dream is to hike the PCT after graduation. After becoming intrigued by cybersecurity systems, I began to record some of my projects on my website in my avid exploration of this field. I started by investigating applied cryptography, using current 
+                                algorithms for specifc purposes, like my Secret Sharing Architecture for Attorney-Client Data. Recently, I am inreasingly fascinated about forensics and malware detection under the guidance of a eminent researcher in the field. All my projects are recorded on my Github.
+
                             </p>
+                            
                         </section>
 
                 </div>
@@ -143,7 +139,7 @@
                             <dt>Address</dt>
                             <dd>1280 Johnson Ave &bull; San Jose, CA 95129 &bull; USA</dd>
                             <dt>Phone</dt>
-                            <dd>(408) 260-8583</dd>
+                            <dd>(408) 565-5239</dd>
                             <dt>Email</dt>
                             <dd><a href="#">josephzhang999@gmail.com</a></dd>
                         </dl>
@@ -153,7 +149,7 @@
                             <li><a href="https://github.com/joezbub" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
                         </ul>
                     </section>
-                    <p class="copyright">&copy; Law Crypt 2020</p>
+                    <p class="copyright">&copy; Joseph Zhang 2020</p>
                 </footer>
 
         </div>
