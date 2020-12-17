@@ -115,11 +115,11 @@
                             <br>
                             <h2 align = "center">Memory Forensics Plugins for ML Models</h2>
                             <p align = "left">
-                                As part of my work at the CyFI lab, I develop plugins to recover ML models from memory. 
+                                As part of my work at the CyFI lab, I develop plugins to recover ML model attributes from memory. 
                                 A large part of the process involves using gdb and examining native Tensorflow and Python structs to create 
                                 VTypes representing the C structures of the weights, shapes, and biases interpreted from Python. Then, I 
                                 navigate the garbage collection generations in Python's memory heap (essentially a doubly linked list with pointers to garbage-collected objects), 
-                                to search for relevant model instances. With the recovered model architecture, we use feature squeezing and gradient-descent based algorithms to detect adversarial examples.
+                                to search for relevant instances of models. With the recovered model architecture, we use feature squeezing and gradient-descent based algorithms to detect adversarial examples (through node injection, data poisoning, etc.).
                             </p>
                             <form action="https://github.com/joezbub/CARLA-Volatility-Plugins" target="_blank">
                                 <input type="submit" class = "button primary" value="Code" />
